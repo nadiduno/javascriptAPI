@@ -7,12 +7,12 @@ async function userData() {
         })
 
         .then((data) => {
-            console.log(data)
-            let root = document.getElementById("root")
-            let nameproduct = data["record"]["TotiLunch"]["0"]["name"]
-            let imageproduct = data["record"]["TotiLunch"]["0"]["avatar"]
-            let descriptionproduct = data["record"]["TotiLunch"]["0"]["descriptionNutritional"]
-            let priceproduct = data["record"]["TotiLunch"]["0"]["price"]
+            // console.log(data)
+            let root = document.getElementById('root')
+            let nameproduct = data['record']['TotiLunch']['0']['name']
+            let imageproduct = data['record']['TotiLunch']['0']['avatar']
+            let descriptionproduct = data['record']['TotiLunch']['0']['descriptionNutritional']
+            let priceproduct = data['record']['TotiLunch']['0']['price']
 
 
             let name = document.createElement('h2')
@@ -25,12 +25,13 @@ async function userData() {
             price.textContent = priceproduct
             image.src = imageproduct
 
+            root.append(image, name, description, price)
+
             // Styles CSS
-            // image.classList.add('classImagem');
             document.body.style.padding = '0'
             document.body.style.margin = '0'
             document.body.style.alignItems = 'center'
-            document.body.style.fontFamily = "'Roboto', sans - serif";
+            document.body.style.fontFamily = '"Roboto", sans - serif';
             document.body.style.background = '#1f1f1f'
             document.body.style.color = '#fff'
             document.body.style.width = '80vw'
@@ -49,7 +50,7 @@ async function userData() {
 
             name.style.fontSize = '1.5rem'
 
-            root.append(image, name, description, price)
+
         })
         .catch((error) => {
             console.error(error)
