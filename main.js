@@ -18,7 +18,7 @@ async function userData() {
             let name = document.createElement('h2')
             let image = document.createElement('img')
             let description = document.createElement('p')
-            let price = document.createElement('p')
+            let price = document.createElement('span')
 
             name.textContent = nameproduct
             description.textContent = descriptionproduct
